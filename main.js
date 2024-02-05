@@ -1,7 +1,7 @@
 // Rock Paper Scissors
 
 // declare variable userChoice as string
-var userChoice = '';
+// var userChoice = '';
 
 //function to make userChoice lowercase for comparison and to ensure valid input
 
@@ -12,31 +12,42 @@ function getUserChoice(userInput) {
     } else {console.log(` ${userInput} is not a valid selction. try again`)}
     };
 
-getUserChoice('Scissors');
+// getUserChoice('Scissors');
 
 // console log the user selection
-console.log(`User selected: ${userChoice}`);
+// console.log(`User selected: ${userChoice}`);
 
 // generate a computer selection
+// getComputerChoice = function() {
+//     return Math.floor(Math.random(3) * 3);
+// };
+
 getComputerChoice = function() {
-    return Math.floor(Math.random(3) * 3);
+    let tempCompNum = Math.floor(Math.random(3) * 3);
+    if (tempCompNum === 0) {
+        return 'rock';
+    } else if (tempCompNum === 1) {
+        return 'paper';
+    } else if (tempCompNum === 2) {
+        return 'scissors';
+    }
 };
 
-var getComputerChoicevar = getComputerChoice();
+// var getComputerChoicevar = getComputerChoice();
 
 
-if (getComputerChoicevar === 0) {
-    computerChoice = 'rock'
-} else if (getComputerChoicevar === 1) {
-    computerChoice = 'paper'
-} else {computerChoice = 'scissors'};
+// if (getComputerChoicevar === 0) {
+//     computerChoice = 'rock'
+// } else if (getComputerChoicevar === 1) {
+//     computerChoice = 'paper'
+// } else {computerChoice = 'scissors'};
 
-console.log(`Computer selected: ${computerChoice}`);
+// console.log(`Computer selected: ${computerChoice}`);
 
 // test inputs and comparison
 // console.log(userChoice == computerChoice);
 
-var announceResult = '';
+// var announceResult = '';
 
 // function to compare userChoice and computerChoice and determine winner
 
@@ -66,6 +77,14 @@ function determineWinner(userChoice, computerChoice) {
     }
 };
 
-announceResult = determineWinner(userChoice, computerChoice);
+// announceResult = determineWinner(userChoice, computerChoice);
 
-console.log(announceResult);
+// console.log(announceResult);
+
+playgame = function() {
+    var userChoice = getUserChoice('ROCK');
+    console.log(userChoice)
+    var computerChoice = getComputerChoice();
+    console.log(computerChoice);
+    console.log(determineWinner(userChoice, computerChoice));
+};
